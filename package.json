@@ -6,7 +6,9 @@
   "main": "dist/index.js",
   "scripts": {
     "test": "ts-node src/index.ts",
-    "build": "tsc"
+    "build": "tsc",
+    "prebuild:binary": "tsc",
+    "build:binary": "pkg ./dist/index.js --targets node18-linux,node18-macos,node18-win --output clipper"
   },
   "bin": {
     "clipper": "dist/index.js"
