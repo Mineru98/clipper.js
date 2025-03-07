@@ -7,8 +7,8 @@
   "scripts": {
     "test": "ts-node src/index.ts",
     "build": "tsc",
-    "prebuild:binary": "tsc",
-    "build:binary": "pkg ./dist/index.js --targets node18-linux,node18-macos,node18-win --output clipper"
+    "prebuild:binary": "rm -rf dist && rm -rf clipper-* && tsc",
+    "build:binary": "pkg ./dist/index.js --output clipper --config pkg.config.json"
   },
   "bin": {
     "clipper": "dist/index.js"
